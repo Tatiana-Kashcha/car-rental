@@ -84,8 +84,8 @@ a {
 }
 
 body {
-  color: #111111;
-  font-family: 'Inter', Coolvetica, sans-serif;
+  color: rgba(18, 20, 23, 0.5);
+  font-family: 'Manrope', Coolvetica, sans-serif;
   font-weight: 400;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
