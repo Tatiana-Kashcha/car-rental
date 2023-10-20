@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.ece9f197.css",
-    "main.js": "/car-rental/static/js/main.f3d376e5.js",
-    "static/js/583.ba885d0b.chunk.js": "/car-rental/static/js/583.ba885d0b.chunk.js",
-    "static/js/69.fc5c2ddd.chunk.js": "/car-rental/static/js/69.fc5c2ddd.chunk.js",
-    "static/js/697.2e2cae8a.chunk.js": "/car-rental/static/js/697.2e2cae8a.chunk.js",
+    "main.js": "/car-rental/static/js/main.a259ad31.js",
+    "static/js/719.08d32872.chunk.js": "/car-rental/static/js/719.08d32872.chunk.js",
+    "static/js/69.e1d288fb.chunk.js": "/car-rental/static/js/69.e1d288fb.chunk.js",
+    "static/js/697.9441118b.chunk.js": "/car-rental/static/js/697.9441118b.chunk.js",
     "static/media/hero-car.png": "/car-rental/static/media/hero-car.8430ea1a9f851067da5e.png",
     "static/media/Montserrat-Regular.ttf": "/car-rental/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
     "static/media/Montserrat-SemiBold.ttf": "/car-rental/static/media/Montserrat-SemiBold.2f7a846126c7d5ee9163.ttf",
@@ -14,13 +14,13 @@
     "static/media/Manrope-Bold.ttf": "/car-rental/static/media/Manrope-Bold.47f6d7143da9d8c0e480.ttf",
     "index.html": "/car-rental/index.html",
     "main.ece9f197.css.map": "/car-rental/static/css/main.ece9f197.css.map",
-    "main.f3d376e5.js.map": "/car-rental/static/js/main.f3d376e5.js.map",
-    "583.ba885d0b.chunk.js.map": "/car-rental/static/js/583.ba885d0b.chunk.js.map",
-    "69.fc5c2ddd.chunk.js.map": "/car-rental/static/js/69.fc5c2ddd.chunk.js.map",
-    "697.2e2cae8a.chunk.js.map": "/car-rental/static/js/697.2e2cae8a.chunk.js.map"
+    "main.a259ad31.js.map": "/car-rental/static/js/main.a259ad31.js.map",
+    "719.08d32872.chunk.js.map": "/car-rental/static/js/719.08d32872.chunk.js.map",
+    "69.e1d288fb.chunk.js.map": "/car-rental/static/js/69.e1d288fb.chunk.js.map",
+    "697.9441118b.chunk.js.map": "/car-rental/static/js/697.9441118b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ece9f197.css",
-    "static/js/main.f3d376e5.js"
+    "static/js/main.a259ad31.js"
   ]
 }
