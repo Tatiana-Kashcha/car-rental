@@ -1,11 +1,13 @@
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import * as s from './Layout.styled';
+// import * as s from './Layout.styled';
+import { Sidebar } from 'components/Sidebar/Sidebar';
 
 export const Layout = () => {
   return (
     <>
-      <s.Sidebar>
+      <Sidebar />
+      {/* <s.Sidebar>
         <s.Container>
           <s.List>
             <li>
@@ -19,7 +21,7 @@ export const Layout = () => {
             </li>
           </s.List>
         </s.Container>
-      </s.Sidebar>
+      </s.Sidebar> */}
       <main>
         <Suspense>
           <Outlet />
