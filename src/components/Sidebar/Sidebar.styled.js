@@ -46,7 +46,6 @@ export const StyledLink = styled(NavLink)`
 
   transition: all 250ms ${globalStyled.timingFunction.cubicBezier};
 
-  &:hover,
   &:focus,
   &.active {
     color: ${globalStyled.colors.white};
