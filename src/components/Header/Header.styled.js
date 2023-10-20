@@ -11,7 +11,6 @@ export const DivBtn = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: ${globalStyled.colors.bgHero};
-  box-shadow: ${globalStyled.shadow.boxShadow};
   display: flex;
   align-items: center;
   p {

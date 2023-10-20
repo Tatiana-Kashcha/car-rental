@@ -5,10 +5,16 @@ import { globalStyled } from 'stylesheet/styled';
 
 export const DivSidebar = styled.div`
   background-color: ${globalStyled.colors.bgHero};
-  width: 350px;
+  width: 380px;
   padding: 20px;
-  box-shadow: ${globalStyled.shadow.boxShadow};
-  position: relative;
+  box-shadow: ${globalStyled.shadow.boxShadowHeader};
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 1200;
+  position: absolute;
+  top: 0;
+  left: 128px;
 `;
 
 export const Sidebar = styled.aside`
@@ -48,10 +54,6 @@ export const StyledLink = styled(NavLink)`
   }
 `;
 export const CloseButton = styled.button`
-  position: absolute;
-  top: 16px;
-  right: 16px;
-
   display: flex;
   align-items: center;
   justify-content: center;

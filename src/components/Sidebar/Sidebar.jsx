@@ -3,15 +3,6 @@ import * as s from './Sidebar.styled';
 export const Sidebar = ({ onSideBar }) => {
   return (
     <s.DivSidebar>
-      <s.CloseButton
-        type="button"
-        aria-label="Close"
-        onClick={() => {
-          onSideBar();
-        }}
-      >
-        <s.IconBtn />
-      </s.CloseButton>
       <s.Sidebar>
         <s.List>
           <li>
@@ -25,6 +16,15 @@ export const Sidebar = ({ onSideBar }) => {
           </li>
         </s.List>
       </s.Sidebar>
+      <s.CloseButton
+        type="button"
+        aria-label="Close"
+        onClick={() => {
+          onSideBar();
+        }}
+      >
+        <s.IconBtn />
+      </s.CloseButton>
     </s.DivSidebar>
   );
 };
