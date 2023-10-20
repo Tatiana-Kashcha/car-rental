@@ -7,6 +7,7 @@ export const Section = styled.section`
 export const Container = styled.div`
   padding-left: 128px;
   padding-right: 128px;
+  margin: 0 auto;
 `;
 
 export const SectionTitle = styled.h2`

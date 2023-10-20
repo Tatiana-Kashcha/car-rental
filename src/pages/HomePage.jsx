@@ -1,9 +1,12 @@
 import { Section } from 'components/Section/Section';
+import { Hero } from 'components/Hero/Hero';
 
 const HomePage = () => {
   return (
     <>
-      <Section title="Home page"></Section>
+      <Section title="Home page">
+        <Hero />
+      </Section>
     </>
   );
 };

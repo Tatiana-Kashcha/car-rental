@@ -19,6 +19,7 @@ export const Sidebar = styled.aside`
 export const Container = styled.div`
   padding-left: 128px;
   padding-right: 128px;
+  margin: 0 auto;
 `;
 
 export const List = styled.ul`
