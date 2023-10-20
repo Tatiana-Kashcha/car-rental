@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
 
+export const Container = styled.div`
+  padding-left: 128px;
+  padding-right: 128px;
+  margin: 0 auto;
+`;
+
 export const DivBtn = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;

@@ -1,35 +1,72 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-// import { globalStyled } from 'stylesheet/styled';
+import { ReactComponent as CloseIconBtn } from '../../icons/x-close.svg';
+import { globalStyled } from 'stylesheet/styled';
 
-export const StyledLink = styled(NavLink)`
-  text-decoration: none;
-  color: #212121;
-  &.active {
-    color: orangered;
-  }
-  &:hover {
-    text-decoration: underline;
-  }
+export const DivSidebar = styled.div`
+  background-color: ${globalStyled.colors.bgHero};
+  width: 350px;
+  padding: 20px;
+  box-shadow: ${globalStyled.shadow.boxShadow};
+  position: relative;
 `;
 
-export const Sidebar = styled.aside``;
-
-export const Container = styled.div`
-  padding-left: 128px;
-  padding-right: 128px;
-  margin: 0 auto;
+export const Sidebar = styled.aside`
+  width: 274px;
 `;
 
 export const List = styled.ul`
-  /* padding: 20px 0px;
-  margin-left: 20px;
-  display: flex; */
-  list-style: none;
   li {
     font-weight: 700;
     &:not(:last-child) {
-      margin-right: 20px;
+      margin-bottom: 20px;
     }
   }
+`;
+
+export const StyledLink = styled(NavLink)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: ${globalStyled.colors.primary};
+
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+
+  transition: all 250ms ${globalStyled.timingFunction.cubicBezier};
+
+  &:hover,
+  &:focus,
+  &.active {
+    color: ${globalStyled.colors.white};
+    background-color: ${globalStyled.colors.colorHero};
+  }
+`;
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 16px;
+  right: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  cursor: pointer;
+  border: none;
+
+  background-color: transparent;
+`;
+
+export const IconBtn = styled(CloseIconBtn)`
+  width: 100%;
+  height: 100%;
+
+  color: ${globalStyled.colors.primary};
 `;
