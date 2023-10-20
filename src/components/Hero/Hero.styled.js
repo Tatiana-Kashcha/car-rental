@@ -8,7 +8,7 @@ export const Thumb = styled.div`
   padding: 40px 0;
   width: 100%;
   height: 500px;
-  box-shadow: 0 8px 4px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: ${globalStyled.shadow.boxShadow};
   background-image: url(${carHero});
   background-position: center;
   background-size: contain;
@@ -17,6 +17,6 @@ export const Thumb = styled.div`
   h1 {
     font-size: 40px;
     font-weight: 700;
-    color: ${globalStyled.colors.accentHover};
+    color: ${globalStyled.colors.colorHero};
   }
 `;

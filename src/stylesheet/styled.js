@@ -13,6 +13,11 @@ export const globalStyled = {
     bgInput: '#F7F7FB',
     bgAdditionalModal: '#F9F9F9',
     bgHero: 'rgba(167, 189, 223, 0.5)',
+    colorHero: '#1e73a3',
+  },
+
+  shadow: {
+    boxShadow: '0 8px 4px -5px rgba(0, 0, 0, 0.3)',
   },
 
   timingFunction: {

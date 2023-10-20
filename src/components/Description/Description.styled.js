@@ -6,7 +6,7 @@ export const Descr = styled.div`
   h2 {
     font-size: 32px;
     font-weight: 600;
-    color: ${globalStyled.colors.accentHover};
+    color: ${globalStyled.colors.colorHero};
     margin-bottom: 20px;
   }
 `;
@@ -15,7 +15,7 @@ export const Advant = styled.div`
   padding-top: 20px;
   padding-bottom: 20px;
   text-align: center;
-  box-shadow: 0 8px 4px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: ${globalStyled.shadow.boxShadow};
 `;
 
 export const List = styled.ul`
@@ -45,5 +45,5 @@ export const Cont = styled.div`
   padding-bottom: 20px;
 
   text-align: center;
-  box-shadow: 0 8px 4px -5px rgba(0, 0, 0, 0.3);
+  box-shadow: ${globalStyled.shadow.boxShadow};
 `;
