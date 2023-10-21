@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Modal from 'components/Modal/Modal';
 import * as s from './CatalogListItems.styled';
 
-export const CatalogListItems = () => {
+export const CatalogListItems = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
 
   const showModal = () => {
