@@ -16,7 +16,6 @@ export const CarDetails = ({
     accessories,
     functionalities,
     rentalPrice,
-    // rentalCompany,
     address,
     rentalConditions,
     mileage,
