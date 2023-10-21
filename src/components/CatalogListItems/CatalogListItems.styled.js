@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
 
+export const Card = styled.div`
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
 export const Thumb = styled.div`
   width: 274px;
-  height: 268px;
+  height: 254px;
+  margin-bottom: 14px;
 `;
 
 export const IconContainer = styled.div`
@@ -11,13 +20,14 @@ export const IconContainer = styled.div`
   top: 10px;
   right: 10px;
   cursor: pointer;
-  z-index: 2;
 `;
 
 export const Img = styled.img`
   border-radius: 14px;
+  display: block;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 14px;
 `;
 
 export const Title = styled.div`
@@ -50,7 +60,7 @@ export const Info = styled.p`
   font-size: 12px;
   line-height: 1.5;
   word-spacing: 3px;
-  margin-bottom: 28px;
+  margin-bottom: auto;
 `;
 
 export const ButtonLearnMore = styled.button`

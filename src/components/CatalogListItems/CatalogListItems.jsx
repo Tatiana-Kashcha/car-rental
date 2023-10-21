@@ -16,7 +16,7 @@ export const CatalogListItems = ({ car }) => {
   };
 
   return (
-    <>
+    <s.Card>
       <s.Thumb>
         <s.Img src={car.img} alt="Car" />
       </s.Thumb>
@@ -41,6 +41,6 @@ export const CatalogListItems = ({ car }) => {
           <CarDetails car={car} />
         </Modal>
       )}
-    </>
+    </s.Card>
   );
 };

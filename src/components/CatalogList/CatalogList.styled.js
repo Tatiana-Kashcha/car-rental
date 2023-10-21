@@ -10,9 +10,8 @@ export const List = styled.ul`
 
 export const ListItems = styled.li`
   display: inline-block;
-  width: 274px;
+  flex-basis: 274px;
   height: 426px;
   text-decoration: none;
-  position: relative;
   margin-bottom: 50px;
 `;
