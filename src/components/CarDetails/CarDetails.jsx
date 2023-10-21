@@ -1,4 +1,4 @@
-import * as s from './CatalogListItems.styled';
+import * as s from './CarDetails.styled';
 
 const phoneNumber = '+380730000000';
 

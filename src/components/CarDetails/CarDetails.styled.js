@@ -81,3 +81,39 @@ export const Accent = styled.span`
   color: ${globalStyled.colors.accent};
   word-spacing: 3px;
 `;
+
+export const Button = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+  width: 168px;
+  height: 44px;
+  top: 20px;
+  left: 20px;
+  border-radius: 12px;
+  border: none;
+  color: ${globalStyled.colors.white};
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+  background-color: ${globalStyled.colors.accent};
+  padding: 12px, 99px, 12px, 99px;
+  transition: background-color 250ms ${globalStyled.timingFunction.cubicBezier};
+
+  &:hover,
+  &:focus {
+    background-color: ${globalStyled.colors.accentHover};
+    cursor: pointer;
+  }
+`;
+
+export const LinkToContact = styled.a`
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.43;
+  color: ${globalStyled.colors.white};
+  word-spacing: 3px;
+  text-decoration: none;
+`;
