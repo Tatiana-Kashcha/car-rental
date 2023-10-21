@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.ece9f197.css",
-    "main.js": "/car-rental/static/js/main.8102fb17.js",
+    "main.js": "/car-rental/static/js/main.683fb9be.js",
     "static/js/983.ac1fe887.chunk.js": "/car-rental/static/js/983.ac1fe887.chunk.js",
-    "static/js/123.0c0b8346.chunk.js": "/car-rental/static/js/123.0c0b8346.chunk.js",
+    "static/js/619.2d5bc09d.chunk.js": "/car-rental/static/js/619.2d5bc09d.chunk.js",
     "static/js/697.e0a3955d.chunk.js": "/car-rental/static/js/697.e0a3955d.chunk.js",
+    "static/js/844.a6423a31.chunk.js": "/car-rental/static/js/844.a6423a31.chunk.js",
     "static/media/hero-car.png": "/car-rental/static/media/hero-car.8430ea1a9f851067da5e.png",
     "static/media/go-car.png": "/car-rental/static/media/go-car.c8df690d33bc69925a39.png",
     "static/media/Montserrat-Regular.ttf": "/car-rental/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
@@ -17,13 +18,14 @@
     "static/media/burger-menu.svg": "/car-rental/static/media/burger-menu.cd8139fdb902f54f6c943bb1141b4141.svg",
     "static/media/x-close.svg": "/car-rental/static/media/x-close.b8c2a2a37d22c5916eba425ea5b71782.svg",
     "main.ece9f197.css.map": "/car-rental/static/css/main.ece9f197.css.map",
-    "main.8102fb17.js.map": "/car-rental/static/js/main.8102fb17.js.map",
+    "main.683fb9be.js.map": "/car-rental/static/js/main.683fb9be.js.map",
     "983.ac1fe887.chunk.js.map": "/car-rental/static/js/983.ac1fe887.chunk.js.map",
-    "123.0c0b8346.chunk.js.map": "/car-rental/static/js/123.0c0b8346.chunk.js.map",
-    "697.e0a3955d.chunk.js.map": "/car-rental/static/js/697.e0a3955d.chunk.js.map"
+    "619.2d5bc09d.chunk.js.map": "/car-rental/static/js/619.2d5bc09d.chunk.js.map",
+    "697.e0a3955d.chunk.js.map": "/car-rental/static/js/697.e0a3955d.chunk.js.map",
+    "844.a6423a31.chunk.js.map": "/car-rental/static/js/844.a6423a31.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ece9f197.css",
-    "static/js/main.8102fb17.js"
+    "static/js/main.683fb9be.js"
   ]
 }
