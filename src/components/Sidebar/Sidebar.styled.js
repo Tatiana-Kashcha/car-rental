@@ -34,7 +34,6 @@ export const StyledLink = styled(NavLink)`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   color: ${globalStyled.colors.primary};
 
   padding: 12px 20px;
@@ -42,9 +41,10 @@ export const StyledLink = styled(NavLink)`
 
   font-size: 16px;
   font-weight: 600;
-  line-height: normal;
+  line-height: 1.25;
 
-  transition: all 250ms ${globalStyled.timingFunction.cubicBezier};
+  transition: color 250ms ${globalStyled.timingFunction.cubicBezier},
+    background-color 250ms ${globalStyled.timingFunction.cubicBezier};
 
   &:focus,
   &.active {
@@ -52,6 +52,7 @@ export const StyledLink = styled(NavLink)`
     background-color: ${globalStyled.colors.colorHero};
   }
 `;
+
 export const CloseButton = styled.button`
   display: flex;
   align-items: center;

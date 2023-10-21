@@ -4,30 +4,29 @@ import * as s from './Modal.styled';
 
 const ModalRoot = document.getElementById('modal-root');
 
-const Modal = ({ onClose, children }) => {
+const Modal = ({ closeModal, children }) => {
   useEffect(() => {
-    const handleKeyDown = e => {
-      if (e.code === 'Escape') {
-        onClose();
-      }
-    };
     window.addEventListener('keydown', handleKeyDown);
-
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose]);
+  });
 
-  const handleBackdropClick = e => {
-    if (e.currentTarget === e.target) {
-      onClose();
+  const handleKeyDown = e => {
+    if (e.code === 'Escape') {
+      closeModal();
     }
   };
 
+  const handleBackdropClick = evt => {
+    if (evt.currentTarget === evt.target) {
+      closeModal();
+    }
+  };
   return createPortal(
     <s.Backdrop onClick={handleBackdropClick}>
       <s.ModalField>
-        <s.CloseButton onClick={onClose}>
+        <s.CloseButton type="button" onClick={closeModal}>
           <s.IconBtn />
         </s.CloseButton>
         {children}

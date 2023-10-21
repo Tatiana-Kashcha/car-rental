@@ -6,14 +6,11 @@ export const Thumb = styled.div`
   background-color: ${globalStyled.colors.bgHero};
   text-align: center;
   padding: 20px 0;
-  width: 100%;
-  height: 500px;
-  box-shadow: ${globalStyled.shadow.boxShadow};
+  height: 540px;
   background-image: url(${carHero});
   background-position: center;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
-  position: relative;
 
   h1 {
     font-size: 40px;

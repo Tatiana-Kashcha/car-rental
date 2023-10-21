@@ -1,11 +1,12 @@
 import { Section } from 'components/Section/Section';
-// import Modal from 'components/Modal/Modal';
+import { CatalogListItems } from 'components/CatalogListItems/CatalogListItems';
 
 const CatalogPage = () => {
   return (
     <>
-      <Section title="Catalog page"></Section>
-      {/* <Modal></Modal> */}
+      <Section title="Catalog page">
+        <CatalogListItems />
+      </Section>
     </>
   );
 };
