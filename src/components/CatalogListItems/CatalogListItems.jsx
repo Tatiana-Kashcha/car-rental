@@ -5,6 +5,7 @@ import { CarDetails } from 'components/CarDetails/CarDetails';
 import { ReactComponent as IconNoFavorite } from '../../icons/noFavorite.svg';
 import { ReactComponent as IconFavorite } from '../../icons/favorite.svg';
 import { useFavorites } from 'hooks/useFavorites';
+import { parseAddress } from '../../utils/parse';
 import noImageIcon from '../../images/no-image.jpg';
 
 export const CatalogListItems = ({ car }) => {
@@ -44,7 +45,8 @@ export const CatalogListItems = ({ car }) => {
         <s.Price>{car.rentalPrice}</s.Price>
       </s.Title>
       <s.Info>
-        {car.address} | {car.rentalCompany} | {car.type} |{car.mileage} m |{' '}
+        {parseAddress(car.address).city} | {parseAddress(car.address).country} |{' '}
+        {car.rentalCompany} | {car.type} | {car.mileage / 1000} |{' '}
         {car.accessories[2]}
       </s.Info>
       <s.ButtonLearnMore onClick={showModal}>Learn more</s.ButtonLearnMore>

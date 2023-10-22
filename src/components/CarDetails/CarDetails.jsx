@@ -1,5 +1,6 @@
 import * as s from './CarDetails.styled';
 import noImageIcon from '../../images/no-image.jpg';
+import { parseConditions } from '../../utils/parse';
 
 const phoneNumber = '+380730000000';
 
@@ -57,12 +58,13 @@ export const CarDetails = ({
       <s.Chapter>Rental Conditions:</s.Chapter>
       <s.Conditions>
         <s.Box>
-          Minimum age :<s.Accent>{rentalConditions[0]}</s.Accent>
+          Minimum age :
+          <s.Accent>{parseConditions(rentalConditions).arr[0]}</s.Accent>
         </s.Box>
-        <s.Box>{rentalConditions[1]}</s.Box>
+        <s.Box>{parseConditions(rentalConditions).arr[1]}</s.Box>
       </s.Conditions>
       <s.Conditions>
-        <s.Box>{rentalConditions[2]}</s.Box>
+        <s.Box>{parseConditions(rentalConditions).arr[2]}</s.Box>
         <s.Box>
           Mileage: <s.Accent>{(mileage / 1000).toFixed(3)}</s.Accent>
         </s.Box>
