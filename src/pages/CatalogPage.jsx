@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { getCatalogCar } from 'api/getCatalogCar';
+import { getCatalogCar } from 'api/operations';
 import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
