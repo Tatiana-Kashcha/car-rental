@@ -15,6 +15,9 @@ export const DivSidebar = styled.div`
   position: absolute;
   top: 0;
   left: 128px;
+  border-top-right-radius: 14px;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
 `;
 
 export const Sidebar = styled.aside`

@@ -2,9 +2,6 @@ import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
 
 export const Details = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  margin: auto; */
   height: 100%;
   position: relative;
   display: flex;
