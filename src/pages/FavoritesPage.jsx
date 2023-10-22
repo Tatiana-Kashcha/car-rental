@@ -36,7 +36,7 @@ const FavoritesPage = () => {
 
   return (
     <>
-      <Section title="Favorites page">
+      <Section>
         {isLoading && Loading.arrows()}
         {!favorites.length && (
           <Message text="You don't have any favorite cars yet!" />

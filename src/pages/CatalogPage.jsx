@@ -29,7 +29,7 @@ const CatalogPage = () => {
 
   return (
     <>
-      <Section title="Catalog page">
+      <Section>
         {isLoading && Loading.arrows()}
         {carPerPage > 0 && <CatalogList data={dataCatalog} />}
       </Section>

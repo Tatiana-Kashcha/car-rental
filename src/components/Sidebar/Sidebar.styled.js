@@ -11,10 +11,8 @@ export const DivSidebar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  /* z-index: 2; */
-  /* position: absolute;
-  top: 0;
-  left: 128px; */
+  z-index: 5;
+
   position: fixed;
   top: 0;
   left: 128px;

@@ -30,6 +30,14 @@ export const Img = styled.img`
   object-fit: cover;
 `;
 
+export const Stopper = styled.img`
+  border-radius: 14px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+
 export const Title = styled.div`
   display: flex;
   justify-content: space-between;

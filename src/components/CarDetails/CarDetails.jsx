@@ -1,4 +1,5 @@
 import * as s from './CarDetails.styled';
+import noImageIcon from '../../images/no-image.jpg';
 
 const phoneNumber = '+380730000000';
 
@@ -24,7 +25,11 @@ export const CarDetails = ({
   return (
     <s.Details>
       <s.Thumb>
-        <s.Img src={img} alt="Car" />
+        {img ? (
+          <s.Img src={img} alt="Car" />
+        ) : (
+          <s.Stopper src={noImageIcon} alt="Car" />
+        )}
       </s.Thumb>
 
       <s.Title>

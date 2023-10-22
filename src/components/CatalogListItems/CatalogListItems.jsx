@@ -5,6 +5,7 @@ import { CarDetails } from 'components/CarDetails/CarDetails';
 import { ReactComponent as IconNoFavorite } from '../../icons/noFavorite.svg';
 import { ReactComponent as IconFavorite } from '../../icons/favorite.svg';
 import { useFavorites } from 'hooks/useFavorites';
+import noImageIcon from '../../images/no-image.jpg';
 
 export const CatalogListItems = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
@@ -21,7 +22,11 @@ export const CatalogListItems = ({ car }) => {
   return (
     <s.Card>
       <s.Thumb>
-        <s.Img src={car.img} alt="Car" />
+        {car.img ? (
+          <s.Img src={car.img} alt="Car" />
+        ) : (
+          <s.Stopper src={noImageIcon} alt="Car" />
+        )}
       </s.Thumb>
       <s.IconContainer
         onClick={e => {
