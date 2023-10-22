@@ -4,39 +4,11 @@ import * as s from './CatalogListItems.styled';
 import { CarDetails } from 'components/CarDetails/CarDetails';
 import { ReactComponent as IconNoFavorite } from '../../icons/noFavorite.svg';
 import { ReactComponent as IconFavorite } from '../../icons/favorite.svg';
-
-const getFavorites = () => {
-  const storedFavorites = localStorage.getItem('favorites');
-  return storedFavorites ? JSON.parse(storedFavorites) : [];
-};
-
-const addFavorite = carId => {
-  const favorites = getFavorites();
-  favorites.push(carId);
-  localStorage.setItem('favorites', JSON.stringify(favorites));
-};
-
-const removeFavorite = carId => {
-  const favorites = getFavorites();
-  const newFavorites = favorites.filter(id => id !== carId);
-  localStorage.setItem('favorites', JSON.stringify(newFavorites));
-};
+import { useFavorites } from 'hooks/useFavorites';
 
 export const CatalogListItems = ({ car }) => {
   const [isShowModal, setIsShowModal] = useState(false);
-  const [favorites, setFavorites] = useState(getFavorites());
-
-  const isFavorite = carId => favorites.includes(carId);
-
-  const toggleFavorite = carId => {
-    if (isFavorite(carId)) {
-      removeFavorite(carId);
-      setFavorites(prev => prev.filter(id => id !== carId));
-    } else {
-      addFavorite(carId);
-      setFavorites(prev => [...prev, carId]);
-    }
-  };
+  const [, isFavorite, toggleFavorite] = useFavorites();
 
   const showModal = () => {
     setIsShowModal(true);
