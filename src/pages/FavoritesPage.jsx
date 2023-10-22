@@ -4,7 +4,6 @@ import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Message } from 'components/Message/Message';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import { useFavorites } from 'hooks/useFavorites';
 
 const FavoritesPage = () => {

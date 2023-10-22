@@ -22,10 +22,10 @@ export const CatalogListItems = ({ car }) => {
   return (
     <s.Card>
       <s.Thumb>
-        {car.img ? (
-          <s.Img src={car.img} alt="Car" />
-        ) : (
+        {car.img === '' ? (
           <s.Stopper src={noImageIcon} alt="Car" />
+        ) : (
+          <s.Img src={car.img} alt="Car" />
         )}
       </s.Thumb>
       <s.IconContainer

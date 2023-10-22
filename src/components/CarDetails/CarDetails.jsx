@@ -25,10 +25,10 @@ export const CarDetails = ({
   return (
     <s.Details>
       <s.Thumb>
-        {img ? (
-          <s.Img src={img} alt="Car" />
-        ) : (
+        {img === '' ? (
           <s.Stopper src={noImageIcon} alt="Car" />
+        ) : (
+          <s.Img src={img} alt="Car" />
         )}
       </s.Thumb>
 
