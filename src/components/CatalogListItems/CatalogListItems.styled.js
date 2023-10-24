@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
+import noImageIcon from '../../images/img-not-valiable.webp';
 
 export const Card = styled.div`
   height: 100%;
@@ -13,6 +14,11 @@ export const Thumb = styled.div`
   width: 274px;
   height: 254px;
   margin-bottom: 14px;
+  border-radius: 14px;
+  background-image: url(${noImageIcon});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 `;
 
 export const IconContainer = styled.div`
@@ -23,14 +29,6 @@ export const IconContainer = styled.div`
 `;
 
 export const Img = styled.img`
-  border-radius: 14px;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-`;
-
-export const Stopper = styled.img`
   border-radius: 14px;
   display: block;
   width: 100%;

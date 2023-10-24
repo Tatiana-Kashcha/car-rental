@@ -8,6 +8,7 @@ export const CatalogList = ({ data }) => {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const itemsToShow = data.slice(0, endIndex);
+
   const loadMore = () => {
     setCurrentPage(prevPage => prevPage + 1);
   };

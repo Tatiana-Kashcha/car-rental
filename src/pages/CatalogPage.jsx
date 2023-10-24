@@ -3,12 +3,11 @@ import { getCatalogCar } from 'api/operations';
 import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
-// import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { FilterCar } from 'components/FilterCar/FilterCar';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const carPerPage = 8;
 
   useEffect(() => {
     setIsLoading(true);
@@ -31,7 +30,9 @@ const CatalogPage = () => {
     <>
       <Section>
         {isLoading && Loading.arrows()}
-        {carPerPage > 0 && <CatalogList data={dataCatalog} />}
+
+        <FilterCar />
+        <CatalogList data={dataCatalog} />
       </Section>
     </>
   );

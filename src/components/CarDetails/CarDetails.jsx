@@ -1,5 +1,4 @@
 import * as s from './CarDetails.styled';
-import noImageIcon from '../../images/no-image.jpg';
 import { parseConditions } from '../../utils/parse';
 
 const phoneNumber = '+380730000000';
@@ -26,11 +25,7 @@ export const CarDetails = ({
   return (
     <s.Details>
       <s.Thumb>
-        {img === '' ? (
-          <s.Stopper src={noImageIcon} alt="Car" />
-        ) : (
-          <s.Img src={img} alt="Car" />
-        )}
+        <s.Img src={img} alt="Car" />
       </s.Thumb>
 
       <s.Title>
