@@ -1,59 +1,53 @@
 import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
-import { FaChevronDown, FaChevronUp } from 'react-icons/fa6';
 
 export const Form = styled.form`
   display: flex;
-  /* width: 162px; */
+  width: 100%;
   justify-content: space-evenly;
   align-items: center;
-  margin: 40px 0px;
+  padding-top: 40px;
 `;
 
-export const LabelBox = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+export const LabelBoxMake = styled.div`
+  width: 224px;
 `;
 
 export const Text = styled.span`
   font-weight: 500;
   font-size: 14px;
   line-height: 1.29;
-  font-family: ${globalStyled.fonts.fontsBody};
   color: ${globalStyled.colors.placeholder};
 `;
 
-export const InputBrand = styled.input`
-  display: flex;
-  flex-direction: column;
-
+export const Select = styled.select`
+  width: 100%;
+  padding: 14px 18px;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.11;
-  font-family: ${globalStyled.fonts.fontsBody};
   color: ${globalStyled.colors.primary};
 
-  height: 48px;
-  width: 224px;
+  cursor: pointer;
   border-radius: 14px;
   border: 1px solid ${globalStyled.colors.bgInput};
 `;
 
-export const InputPrice = styled.input`
-  display: flex;
-  flex-direction: column;
-
+export const DropdownList = styled.option`
+  width: 100%;
+  background-color: ${globalStyled.colors.white};
   font-weight: 500;
-  font-size: 18px;
-  line-height: 1.11;
-  font-family: ${globalStyled.fonts.fontsBody};
-  color: ${globalStyled.colors.primary};
+  font-size: 16px;
+  line-height: 1.25;
+  color: ${globalStyled.colors.dropdown};
+`;
 
-  height: 48px;
+export const LabelBoxPrice = styled.div`
   width: 125px;
-  border-radius: 14px;
-  border: 1px solid ${globalStyled.colors.bgInput};
+`;
+
+export const LabelBox = styled.div`
+  width: 160px;
 `;
 
 export const InputMilea = styled.input`
@@ -63,7 +57,6 @@ export const InputMilea = styled.input`
   font-weight: 500;
   font-size: 18px;
   line-height: 1.11;
-  font-family: ${globalStyled.fonts.fontsBody};
   color: ${globalStyled.colors.primary};
 
   height: 48px;
@@ -96,53 +89,4 @@ export const Button = styled.button`
     background-color: ${globalStyled.colors.accentHover};
     cursor: pointer;
   }
-`;
-
-export const DropdownList = styled.ul`
-  position: absolute;
-  left: 162px;
-  z-index: 10;
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: scroll;
-  width: 224px;
-  background-color: ${globalStyled.colors.white};
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 235px;
-  list-style-type: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  font-family: ${globalStyled.fonts.fontsBody};
-  color: ${globalStyled.colors.dropdown};
-`;
-
-export const DropdownPriceList = styled.ul`
-  position: absolute;
-  left: 150px;
-  z-index: 10;
-  border: 1px solid #ccc;
-  max-height: 150px;
-  overflow-y: scroll;
-  width: 100px;
-  background-color: ${globalStyled.colors.white};
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  margin-top: 235px;
-  margin-left: 300px;
-  list-style-type: none;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.25;
-  font-family: ${globalStyled.fonts.fontsBody};
-  color: ${globalStyled.colors.dropdown};
-`;
-
-export const ChevronDown = styled(FaChevronDown)`
-  width: 20px;
-  height: 20px;
-`;
-
-export const ChevronUp = styled(FaChevronUp)`
-  width: 20px;
-  height: 20px;
 `;
