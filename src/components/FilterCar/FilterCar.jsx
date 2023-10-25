@@ -25,6 +25,10 @@ export const FilterCar = ({ data }) => {
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
+  const filterCar = data.filter(({ make }) => make.includes(inputBrand));
+
+  console.log(filterCar);
+
   return (
     <s.Form onSubmit={handleSubmit}>
       <s.LabelBoxMake>
