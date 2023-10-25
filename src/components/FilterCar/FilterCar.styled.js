@@ -11,7 +11,7 @@ export const Form = styled.form`
 `;
 
 export const LabelBoxMake = styled.div`
-  width: 224px;
+  border-radius: 14px;
 `;
 
 export const Text = styled.span`
@@ -29,6 +29,7 @@ export const Select = styled.select`
   line-height: 1.11;
   color: ${globalStyled.colors.primary};
 
+  outline: 0;
   cursor: pointer;
   border-radius: 14px;
   border: 1px solid ${globalStyled.colors.bgInput};
@@ -36,8 +37,9 @@ export const Select = styled.select`
 
 export const DropdownList = styled.option`
   width: 100%;
-  height: 272px;
+  flex-basis: 272px;
   overflow-y: scroll;
+
   background-color: ${globalStyled.colors.white};
   font-weight: 500;
   font-size: 16px;
