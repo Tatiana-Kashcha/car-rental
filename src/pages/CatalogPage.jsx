@@ -31,7 +31,7 @@ const CatalogPage = () => {
       <Section>
         {isLoading && Loading.arrows()}
 
-        <FilterCar />
+        <FilterCar data={dataCatalog} />
         <CatalogList data={dataCatalog} />
       </Section>
     </>
