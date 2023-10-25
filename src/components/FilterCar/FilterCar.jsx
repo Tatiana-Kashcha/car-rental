@@ -62,7 +62,9 @@ export const FilterCar = ({ data }) => {
                     .startsWith(inputPriceValue.toLowerCase())
               )
               .map(rentalPrice => (
-                <s.DropdownList>{rentalPrice}</s.DropdownList>
+                <s.DropdownList value="rentalPrice">
+                  {rentalPrice}
+                </s.DropdownList>
               ))}
           </s.Select>
         </s.LabelBoxPrice>
