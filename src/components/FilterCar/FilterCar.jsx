@@ -11,23 +11,18 @@ export const FilterCar = ({ data }) => {
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
 
-  const handleMileageFromChange = e => {
-    e.preventDefault();
-    setMileageFrom(e.target.value);
+  const handleChangeMileageFrom = evt =>
+    setMileageFrom(evt.currentTarget.value);
+  const handleChangeMileageTo = evt => setMileageTo(evt.currentTarget.value);
 
-    console.log(mileageFrom);
-  };
-
-  const handleMileageToChange = e => {
-    e.preventDefault();
-    setMileageTo(e.target.value);
-
-    console.log(mileageTo);
+  const handleSubmit = evt => {
+    evt.preventDefault();
+    console.log({ mileageFrom, mileageTo });
   };
 
   return (
     <>
-      <s.Form>
+      <s.Form onSubmit={handleSubmit}>
         <s.LabelBoxMake>
           <label htmlFor="inputBrandText">
             <s.Text>Car brand</s.Text>
@@ -68,17 +63,17 @@ export const FilterCar = ({ data }) => {
               ))}
           </s.Select>
         </s.LabelBoxPrice>
-        <div>
+        <s.LabelBox>
           <s.Text>Car mileage / km</s.Text>
-          <s.LabelBox>
+          <s.LabelBoxMileage>
             <label htmlFor="carMileageFrom">
               <s.InputMilea
                 type="text"
                 name="carMileageFrom"
                 id="carMileageFrom"
                 placeholder="From"
-                value={`${mileageFrom}`}
-                onChange={handleMileageFromChange}
+                value={mileageFrom}
+                onChange={handleChangeMileageFrom}
               />
             </label>
             <label htmlFor="carMileageTo">
@@ -87,12 +82,13 @@ export const FilterCar = ({ data }) => {
                 name="carMileageTo"
                 id="carMileageTo"
                 placeholder="To"
-                value={`${mileageTo}`}
-                onChange={handleMileageToChange}
+                value={mileageTo}
+                onChange={handleChangeMileageTo}
               />
             </label>
-          </s.LabelBox>
-        </div>
+          </s.LabelBoxMileage>
+        </s.LabelBox>
+
         <s.Button>Search</s.Button>
       </s.Form>
     </>

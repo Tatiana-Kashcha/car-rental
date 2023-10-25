@@ -4,9 +4,10 @@ import { globalStyled } from 'stylesheet/styled';
 export const Form = styled.form`
   display: flex;
   width: 100%;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: center;
+  gap: 18px;
   padding-top: 40px;
+  align-items: center;
 `;
 
 export const LabelBoxMake = styled.div`
@@ -35,6 +36,8 @@ export const Select = styled.select`
 
 export const DropdownList = styled.option`
   width: 100%;
+  height: 272px;
+  overflow-y: scroll;
   background-color: ${globalStyled.colors.white};
   font-weight: 500;
   font-size: 16px;
@@ -47,13 +50,15 @@ export const LabelBoxPrice = styled.div`
 `;
 
 export const LabelBox = styled.div`
-  width: 160px;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const LabelBoxMileage = styled.div`
+  display: flex;
 `;
 
 export const InputMilea = styled.input`
-  display: flex;
-  flex-direction: column;
-
   font-weight: 500;
   font-size: 18px;
   line-height: 1.11;
@@ -61,6 +66,7 @@ export const InputMilea = styled.input`
 
   height: 48px;
   width: 160px;
+  padding: 14px 24px;
   border-radius: 14px;
   border: 1px solid ${globalStyled.colors.bgInput};
 `;

@@ -26,12 +26,16 @@ const CatalogPage = () => {
     catalogCars();
   }, []);
 
+  // const handleSubmit = evt => {
+  //   evt.preventDefault();
+  // };
+
   return (
     <>
       <Section>
         {isLoading && Loading.arrows()}
-
         <FilterCar data={dataCatalog} />
+        {/* <FilterCar data={dataCatalog} handleSubmit={handleSubmit} /> */}
         <CatalogList data={dataCatalog} />
       </Section>
     </>
