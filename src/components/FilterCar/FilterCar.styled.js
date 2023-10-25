@@ -7,7 +7,7 @@ export const Form = styled.form`
   justify-content: center;
   gap: 18px;
   padding-top: 40px;
-  align-items: center;
+  align-items: flex-end;
 `;
 
 export const LabelBoxMake = styled.div`
@@ -58,6 +58,7 @@ export const LabelBox = styled.div`
 
 export const LabelBoxMileage = styled.div`
   display: flex;
+  margin-top: 8px;
 `;
 
 export const InputMilea = styled.input`

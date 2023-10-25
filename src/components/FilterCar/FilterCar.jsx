@@ -2,22 +2,27 @@ import { useState } from 'react';
 import * as s from './FilterCar.styled';
 
 export const FilterCar = ({ data }) => {
-  const [inputValue] = useState('');
-  const [inputPriceValue] = useState('');
-
+  const [inputBrand, setInputBrand] = useState('');
+  const [inputPrice, setInputPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
 
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
 
+  const handleChangeInputBrand = evt => setInputBrand(evt.currentTarget.value);
+
+  const handleChangeInputPrice = evt => setInputPrice(evt.currentTarget.value);
+
   const handleChangeMileageFrom = evt =>
     setMileageFrom(evt.currentTarget.value);
+
   const handleChangeMileageTo = evt => setMileageTo(evt.currentTarget.value);
 
   const handleSubmit = evt => {
     evt.preventDefault();
-    console.log({ mileageFrom, mileageTo });
+
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
   return (
@@ -26,36 +31,34 @@ export const FilterCar = ({ data }) => {
         <label htmlFor="inputBrandText">
           <s.Text>Car brand</s.Text>
         </label>
-        <s.Select type="select" name="inputBrand" id="inputBrandText">
+        <s.Select
+          type="select"
+          name="inputBrand"
+          id="inputBrandText"
+          onChange={handleChangeInputBrand}
+        >
           <option value="">Enter the text</option>
-          {uniqueMakes
-
-            .filter(
-              make =>
-                make && make.toLowerCase().startsWith(inputValue.toLowerCase())
-            )
-            .map(make => (
-              <s.DropdownList value="make">{make}</s.DropdownList>
-            ))}
+          {uniqueMakes.sort().map(make => (
+            <s.DropdownList value={`${make}`}>{make}</s.DropdownList>
+          ))}
         </s.Select>
       </s.LabelBoxMake>
       <s.LabelBoxPrice>
         <label htmlFor="inputPriceTo">
           <s.Text>Price/ 1 hour</s.Text>
         </label>
-        <s.Select type="select" name="inputPric" id="inputPriceTo">
+        <s.Select
+          type="select"
+          name="inputPric"
+          id="inputPriceTo"
+          onChange={handleChangeInputPrice}
+        >
           <option value="">To $</option>
-          {uniquePrice
-            .filter(
-              rentalPrice =>
-                rentalPrice &&
-                rentalPrice
-                  .toLowerCase()
-                  .startsWith(inputPriceValue.toLowerCase())
-            )
-            .map(rentalPrice => (
-              <s.DropdownList value="rentalPrice">{rentalPrice}</s.DropdownList>
-            ))}
+          {uniquePrice.sort().map(rentalPrice => (
+            <s.DropdownList value={`${rentalPrice}`}>
+              {rentalPrice}
+            </s.DropdownList>
+          ))}
         </s.Select>
       </s.LabelBoxPrice>
       <s.LabelBox>
