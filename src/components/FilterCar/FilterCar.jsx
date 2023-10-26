@@ -1,7 +1,7 @@
 import * as s from './FilterCar.styled';
 import { useFiltersCars } from 'hooks/useFiltersCars';
 
-export const FilterCar = ({ data }) => {
+export const FilterCar = ({ data, handleSubmit }) => {
   const [
     ,
     ,
@@ -20,18 +20,20 @@ export const FilterCar = ({ data }) => {
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
 
-  const handleSubmit = evt => {
-    evt.preventDefault();
-    // filteredCar(data);
-    // console.log(filterCars);
-    const filterCar = data
-      .filter(({ make }) => make.includes(inputBrand))
-      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+  console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
 
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-    console.log(filterCar);
-    return filterCar;
-  };
+  // const handleSubmit = evt => {
+  //   evt.preventDefault();
+  //   // filteredCar(data);
+  //   // console.log(filterCars);
+  //   const filterCar = data
+  //     .filter(({ make }) => make.includes(inputBrand))
+  //     .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+
+  //   console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+  //   console.log(filterCar);
+  //   return filterCar;
+  // };
 
   return (
     <s.Form onSubmit={handleSubmit}>
