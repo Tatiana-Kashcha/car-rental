@@ -28,6 +28,7 @@ export const FilterCar = ({ data }) => {
 
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
     console.log(filterCar);
+    return filterCar;
   };
 
   return (

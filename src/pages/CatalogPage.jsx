@@ -26,10 +26,6 @@ const CatalogPage = () => {
     catalogCars();
   }, []);
 
-  // const handleSubmit = evt => {
-  //   evt.preventDefault();
-  // };
-
   return (
     <>
       <Section>
