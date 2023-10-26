@@ -4,10 +4,12 @@ import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { FilterCar } from 'components/FilterCar/FilterCar';
+// import { useFiltersCars } from 'hooks/useFiltersCars';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  // const [filterCars, filteredCar] = useFiltersCars(dataCatalog);
 
   useEffect(() => {
     setIsLoading(true);
@@ -25,6 +27,12 @@ const CatalogPage = () => {
     };
     catalogCars();
   }, []);
+
+  // const handleSubmit = evt => {
+  //   evt.preventDefault();
+  //   filteredCar(dataCatalog);
+  //   console.log(filterCars);
+  // };
 
   return (
     <>

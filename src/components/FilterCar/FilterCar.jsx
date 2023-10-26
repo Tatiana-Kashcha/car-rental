@@ -3,6 +3,10 @@ import { useFiltersCars } from 'hooks/useFiltersCars';
 
 export const FilterCar = ({ data }) => {
   const [
+    ,
+    ,
+    // filterCars,
+    // filteredCar,
     mileageFrom,
     mileageTo,
     inputBrand,
@@ -18,7 +22,8 @@ export const FilterCar = ({ data }) => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-
+    // filteredCar(data);
+    // console.log(filterCars);
     const filterCar = data
       .filter(({ make }) => make.includes(inputBrand))
       .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));

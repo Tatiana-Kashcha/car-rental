@@ -5,6 +5,7 @@ export const useFiltersCars = () => {
   const [inputPrice, setInputPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
+  const [filterCars, setFilterCars] = useState([]);
 
   const handleChangeInputBrand = evt => setInputBrand(evt.currentTarget.value);
 
@@ -15,7 +16,17 @@ export const useFiltersCars = () => {
 
   const handleChangeMileageTo = evt => setMileageTo(evt.currentTarget.value);
 
+  const filteredCar = data => {
+    setFilterCars(
+      data
+        .filter(({ make }) => make.includes(inputBrand))
+        .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice))
+    );
+  };
+
   return [
+    filterCars,
+    filteredCar,
     mileageFrom,
     mileageTo,
     inputBrand,
