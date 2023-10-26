@@ -25,7 +25,9 @@ export const FilterCar = ({ data }) => {
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
-  const filterCar = data.filter(({ make }) => make.includes(inputBrand));
+  const filterCar = data
+    .filter(({ make }) => make.includes(inputBrand))
+    .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
 
   console.log(filterCar);
 
