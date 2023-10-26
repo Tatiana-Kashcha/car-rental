@@ -3,7 +3,6 @@ import { useFiltersCars } from 'hooks/useFiltersCars';
 
 export const FilterCar = ({ data }) => {
   const [
-    ,
     mileageFrom,
     mileageTo,
     inputBrand,

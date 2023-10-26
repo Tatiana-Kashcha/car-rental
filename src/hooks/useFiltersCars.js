@@ -15,14 +15,7 @@ export const useFiltersCars = () => {
 
   const handleChangeMileageTo = evt => setMileageTo(evt.currentTarget.value);
 
-  const filterCar = data => {
-    data
-      .filter(({ make }) => make.includes(inputBrand))
-      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
-  };
-
   return [
-    filterCar,
     mileageFrom,
     mileageTo,
     inputBrand,
