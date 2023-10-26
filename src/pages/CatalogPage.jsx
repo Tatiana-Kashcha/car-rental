@@ -4,7 +4,6 @@ import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { FilterCar } from 'components/FilterCar/FilterCar';
-// import { useFiltersCars } from 'hooks/useFiltersCars';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);

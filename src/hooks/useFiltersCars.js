@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export const useFiltersCars = data => {
+export const useFiltersCars = () => {
   const [inputBrand, setInputBrand] = useState('');
   const [inputPrice, setInputPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');

@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import * as s from './FilterCar.styled';
 import { useFiltersCars } from 'hooks/useFiltersCars';
 
 export const FilterCar = ({ data }) => {
+  const [dataFilterCar, setDataFilterCar] = useState([]);
   const [
     ,
     mileageFrom,
@@ -19,13 +21,13 @@ export const FilterCar = ({ data }) => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
-
-    const filterCar = data
-      .filter(({ make }) => make.includes(inputBrand))
-      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
-
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-    console.log(filterCar);
+    setDataFilterCar(
+      data
+        .filter(({ make }) => make.includes(inputBrand))
+        .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice))
+    );
+    console.log(dataFilterCar);
+    return dataFilterCar;
   };
 
   return (
