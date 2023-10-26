@@ -1,23 +1,21 @@
-import { useState } from 'react';
 import * as s from './FilterCar.styled';
+import { useFiltersCars } from 'hooks/useFiltersCars';
 
 export const FilterCar = ({ data }) => {
-  const [inputBrand, setInputBrand] = useState('');
-  const [inputPrice, setInputPrice] = useState('');
-  const [mileageFrom, setMileageFrom] = useState('');
-  const [mileageTo, setMileageTo] = useState('');
+  const [
+    ,
+    mileageFrom,
+    mileageTo,
+    inputBrand,
+    inputPrice,
+    handleChangeInputBrand,
+    handleChangeInputPrice,
+    handleChangeMileageFrom,
+    handleChangeMileageTo,
+  ] = useFiltersCars(data);
 
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
-
-  const handleChangeInputBrand = evt => setInputBrand(evt.currentTarget.value);
-
-  const handleChangeInputPrice = evt => setInputPrice(evt.currentTarget.value);
-
-  const handleChangeMileageFrom = evt =>
-    setMileageFrom(evt.currentTarget.value);
-
-  const handleChangeMileageTo = evt => setMileageTo(evt.currentTarget.value);
 
   const handleSubmit = evt => {
     evt.preventDefault();
@@ -28,7 +26,6 @@ export const FilterCar = ({ data }) => {
 
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
     console.log(filterCar);
-    return filterCar;
   };
 
   return (

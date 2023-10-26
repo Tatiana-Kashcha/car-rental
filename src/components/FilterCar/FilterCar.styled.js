@@ -80,9 +80,7 @@ export const Button = styled.button`
   align-items: center;
 
   width: 136px;
-  height: 48px;
-  top: 20px;
-  left: 20px;
+  height: 44px;
   border-radius: 12px;
   border: none;
   color: ${globalStyled.colors.white};
@@ -90,7 +88,7 @@ export const Button = styled.button`
   font-size: 14px;
   line-height: 1.43;
   background-color: ${globalStyled.colors.accent};
-  padding: 14px, 44px, 14px, 44px;
+
   transition: background-color 250ms ${globalStyled.timingFunction.cubicBezier};
 
   &:hover,
