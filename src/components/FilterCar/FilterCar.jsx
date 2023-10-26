@@ -22,14 +22,13 @@ export const FilterCar = ({ data }) => {
   const handleSubmit = evt => {
     evt.preventDefault();
 
+    const filterCar = data
+      .filter(({ make }) => make.includes(inputBrand))
+      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+    console.log(filterCar);
   };
-
-  const filterCar = data
-    .filter(({ make }) => make.includes(inputBrand))
-    .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
-
-  console.log(filterCar);
 
   return (
     <s.Form onSubmit={handleSubmit}>
