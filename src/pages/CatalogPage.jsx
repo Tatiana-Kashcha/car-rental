@@ -4,6 +4,7 @@ import { Section } from 'components/Section/Section';
 import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { FilterCar } from 'components/FilterCar/FilterCar';
+import { Message } from 'components/Message/Message';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
@@ -91,6 +92,9 @@ const CatalogPage = () => {
           mileageFrom={mileageFrom}
           mileageTo={mileageTo}
         />
+        {!filterCatalog.length && (
+          <Message text="Sorry, there are no machines with such parameters!" />
+        )}
         <CatalogList data={filterCatalog} />
       </Section>
     </>

@@ -103,6 +103,9 @@ const FavoritesPage = () => {
               mileageFrom={mileageFrom}
               mileageTo={mileageTo}
             />
+            {!filterCatalog.length && (
+              <Message text="Sorry, there are no machines with such parameters!" />
+            )}
             <CatalogList data={filterCatalog} />
           </>
         )}
