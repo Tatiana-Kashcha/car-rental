@@ -82,9 +82,17 @@ const FavoritesPage = () => {
     setInputPrice('');
     setMileageFrom('');
     setMileageTo('');
+    clearSelect();
     setFilterCatalog(dataFavoriteCar);
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
+
+  function clearSelect() {
+    let selectInputBrand = document.getElementById('inputBrandText');
+    let selectInputPrice = document.getElementById('inputPriceTo');
+    selectInputBrand.innerHTML += '';
+    selectInputPrice.innerHTML += '';
+  }
 
   return (
     <>
