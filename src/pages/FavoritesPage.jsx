@@ -10,6 +10,11 @@ import { FilterCar } from 'components/FilterCar/FilterCar';
 const FavoritesPage = () => {
   const [favorites] = useFavorites();
   const [dataFavoriteCar, setDataFavoriteCar] = useState([]);
+  const [filterCatalog, setFilterCatalog] = useState([]);
+  const [inputBrand, setInputBrand] = useState('');
+  const [inputPrice, setInputPrice] = useState('');
+  const [mileageFrom, setMileageFrom] = useState('');
+  const [mileageTo, setMileageTo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -24,6 +29,7 @@ const FavoritesPage = () => {
         const favoriteCar = responses.map(response => response.data);
 
         setDataFavoriteCar(favoriteCar);
+        setFilterCatalog(favoriteCar);
       } catch (error) {
         console.log(error);
       } finally {
@@ -34,6 +40,52 @@ const FavoritesPage = () => {
     catalogFavoriteCars();
   }, [favorites]);
 
+  const handleCange = evt => {
+    const { name, value } = evt.target;
+
+    switch (name) {
+      case 'inputBrand':
+        setInputBrand(value);
+        break;
+
+      case 'inputPrice':
+        setInputPrice(value);
+        break;
+
+      case 'carMileageFrom':
+        setMileageFrom(value);
+        break;
+
+      case 'carMileageTo':
+        setMileageTo(value);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    const filterCar = dataFavoriteCar
+      .filter(({ make }) => make.includes(inputBrand))
+      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+
+    setFilterCatalog(filterCar);
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+    console.log(filterCar);
+  };
+
+  const resetFilters = () => {
+    setInputBrand('');
+    setInputPrice('');
+    setMileageFrom('');
+    setMileageTo('');
+    setFilterCatalog(dataFavoriteCar);
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+  };
+
   return (
     <>
       <Section>
@@ -43,8 +95,15 @@ const FavoritesPage = () => {
         )}
         {favorites.length > 0 && (
           <>
-            <FilterCar data={dataFavoriteCar} />
-            <CatalogList data={dataFavoriteCar} />
+            <FilterCar
+              data={dataFavoriteCar}
+              handleSubmit={handleSubmit}
+              handleCange={handleCange}
+              resetFilters={resetFilters}
+              mileageFrom={mileageFrom}
+              mileageTo={mileageTo}
+            />
+            <CatalogList data={filterCatalog} />
           </>
         )}
       </Section>
