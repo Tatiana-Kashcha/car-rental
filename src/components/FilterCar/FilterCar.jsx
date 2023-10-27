@@ -1,39 +1,58 @@
+import { useState } from 'react';
 import * as s from './FilterCar.styled';
-import { useFiltersCars } from 'hooks/useFiltersCars';
 
-export const FilterCar = ({ data, handleSubmit }) => {
-  const [
-    ,
-    ,
-    // filterCars,
-    // filteredCar,
-    mileageFrom,
-    mileageTo,
-    inputBrand,
-    inputPrice,
-    handleChangeInputBrand,
-    handleChangeInputPrice,
-    handleChangeMileageFrom,
-    handleChangeMileageTo,
-  ] = useFiltersCars(data);
+export const FilterCar = ({ data }) => {
+  const [inputBrand, setInputBrand] = useState('');
+  const [inputPrice, setInputPrice] = useState('');
+  const [mileageFrom, setMileageFrom] = useState('');
+  const [mileageTo, setMileageTo] = useState('');
 
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
 
-  console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+  const handleCange = evt => {
+    const { name, value } = evt.target;
 
-  // const handleSubmit = evt => {
-  //   evt.preventDefault();
-  //   // filteredCar(data);
-  //   // console.log(filterCars);
-  //   const filterCar = data
-  //     .filter(({ make }) => make.includes(inputBrand))
-  //     .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+    switch (name) {
+      case 'inputBrand':
+        setInputBrand(value);
+        break;
 
-  //   console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-  //   console.log(filterCar);
-  //   return filterCar;
-  // };
+      case 'inputPrice':
+        setInputPrice(value);
+        break;
+
+      case 'carMileageFrom':
+        setMileageFrom(value);
+        break;
+
+      case 'carMileageTo':
+        setMileageTo(value);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    const filterCar = data
+      .filter(({ make }) => make.includes(inputBrand))
+      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+    console.log(filterCar);
+    return filterCar;
+  };
+
+  const resetFilters = () => {
+    setInputBrand('');
+    setInputPrice('');
+    setMileageFrom('');
+    setMileageTo('');
+  };
 
   return (
     <s.Form onSubmit={handleSubmit}>
@@ -45,7 +64,7 @@ export const FilterCar = ({ data, handleSubmit }) => {
           type="select"
           name="inputBrand"
           id="inputBrandText"
-          onChange={handleChangeInputBrand}
+          onChange={handleCange}
         >
           <option value="">Enter the text</option>
           {uniqueMakes.sort().map(make => (
@@ -59,9 +78,9 @@ export const FilterCar = ({ data, handleSubmit }) => {
         </label>
         <s.Select
           type="select"
-          name="inputPric"
+          name="inputPrice"
           id="inputPriceTo"
-          onChange={handleChangeInputPrice}
+          onChange={handleCange}
         >
           <option value="">To $</option>
           {uniquePrice.sort().map(rentalPrice => (
@@ -81,7 +100,7 @@ export const FilterCar = ({ data, handleSubmit }) => {
               id="carMileageFrom"
               placeholder="From"
               value={mileageFrom}
-              onChange={handleChangeMileageFrom}
+              onChange={handleCange}
             />
           </label>
           <label htmlFor="carMileageTo">
@@ -91,13 +110,20 @@ export const FilterCar = ({ data, handleSubmit }) => {
               id="carMileageTo"
               placeholder="To"
               value={mileageTo}
-              onChange={handleChangeMileageTo}
+              onChange={handleCange}
             />
           </label>
         </s.LabelBoxMileage>
       </s.LabelBox>
 
-      <s.Button>Search</s.Button>
+      <s.Button type="submit">
+        {' '}
+        <s.IconSearchBtn />
+        Search
+      </s.Button>
+      <s.Button type="button" onClick={resetFilters}>
+        Reset filters
+      </s.Button>
     </s.Form>
   );
 };

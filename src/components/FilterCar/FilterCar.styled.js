@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { globalStyled } from 'stylesheet/styled';
+import { ReactComponent as IconSearch } from '../../icons/dandruff.svg';
 
 export const Form = styled.form`
   display: flex;
@@ -96,4 +97,14 @@ export const Button = styled.button`
     background-color: ${globalStyled.colors.accentHover};
     cursor: pointer;
   }
+`;
+
+export const IconSearchBtn = styled(IconSearch)`
+  width: 25px;
+  height: 25px;
+  border: none;
+  margin-right: 4px;
+  padding: 0;
+  cursor: pointer;
+  fill: ${globalStyled.colors.white};
 `;
