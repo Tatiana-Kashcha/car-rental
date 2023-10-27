@@ -61,6 +61,16 @@ const CatalogPage = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
 
+    // const filterMakeCar = dataCatalog.filter(({ make }) =>
+    //   make.includes(inputBrand)
+    // );
+    // const filterrentalPriceCar = filterMakeCar.filter(
+    //   ({ rentalPrice }) => rentalPrice === inputPrice
+    // );
+    // const filterCar = filterrentalPriceCar.filter(
+    //   ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
+    // );
+
     const filterCar = dataCatalog
       .filter(({ make }) => make.includes(inputBrand))
       .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
