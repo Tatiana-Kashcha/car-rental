@@ -8,6 +8,10 @@ import { FilterCar } from 'components/FilterCar/FilterCar';
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [inputBrand, setInputBrand] = useState('');
+  const [inputPrice, setInputPrice] = useState('');
+  const [mileageFrom, setMileageFrom] = useState('');
+  const [mileageTo, setMileageTo] = useState('');
 
   useEffect(() => {
     setIsLoading(true);
@@ -26,24 +30,63 @@ const CatalogPage = () => {
     catalogCars();
   }, []);
 
-  // const handleSubmit = evt => {
-  //   evt.preventDefault();
+  const handleCange = evt => {
+    const { name, value } = evt.target;
 
-  //   // const filterCar = dataCatalog
-  //   //   .filter(({ make }) => make.includes(inputBrand))
-  //   //   .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+    switch (name) {
+      case 'inputBrand':
+        setInputBrand(value);
+        break;
 
-  //   // setDataCatalog(filterCar);
-  //   // console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-  //   // console.log(filterCar);
-  // };
+      case 'inputPrice':
+        setInputPrice(value);
+        break;
+
+      case 'carMileageFrom':
+        setMileageFrom(value);
+        break;
+
+      case 'carMileageTo':
+        setMileageTo(value);
+        break;
+
+      default:
+        break;
+    }
+  };
+
+  const handleSubmit = evt => {
+    evt.preventDefault();
+
+    const filterCar = dataCatalog
+      .filter(({ make }) => make.includes(inputBrand))
+      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+
+    setDataCatalog(filterCar);
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+    console.log(filterCar);
+  };
+
+  const resetFilters = () => {
+    setInputBrand('');
+    setInputPrice('');
+    setMileageFrom('');
+    setMileageTo('');
+  };
 
   return (
     <>
       <Section>
         {isLoading && Loading.arrows()}
-        <FilterCar data={dataCatalog} />
-        {/* <FilterCar data={dataCatalog} handleSubmit={handleSubmit} /> */}
+
+        <FilterCar
+          data={dataCatalog}
+          handleSubmit={handleSubmit}
+          handleCange={handleCange}
+          resetFilters={resetFilters}
+          mileageFrom={mileageFrom}
+          mileageTo={mileageTo}
+        />
         <CatalogList data={dataCatalog} />
       </Section>
     </>
