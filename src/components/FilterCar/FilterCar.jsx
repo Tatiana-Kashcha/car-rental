@@ -52,7 +52,7 @@ export const FilterCar = ({
         <s.LabelBoxMileage>
           <label htmlFor="carMileageFrom">
             <s.InputMilea
-              type="text"
+              type="number"
               name="carMileageFrom"
               id="carMileageFrom"
               placeholder="From"
@@ -62,7 +62,7 @@ export const FilterCar = ({
           </label>
           <label htmlFor="carMileageTo">
             <s.InputMilea
-              type="text"
+              type="number"
               name="carMileageTo"
               id="carMileageTo"
               placeholder="To"

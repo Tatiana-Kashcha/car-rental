@@ -7,11 +7,12 @@ import { FilterCar } from 'components/FilterCar/FilterCar';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [filterCatalog, setFilterCatalog] = useState([]);
   const [inputBrand, setInputBrand] = useState('');
   const [inputPrice, setInputPrice] = useState('');
   const [mileageFrom, setMileageFrom] = useState('');
   const [mileageTo, setMileageTo] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     setIsLoading(true);
@@ -20,6 +21,7 @@ const CatalogPage = () => {
       try {
         const response = await getCatalogCar();
         setDataCatalog(response.data);
+        setFilterCatalog(response.data);
       } catch (error) {
         console.log(error);
       } finally {
@@ -62,7 +64,7 @@ const CatalogPage = () => {
       .filter(({ make }) => make.includes(inputBrand))
       .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
 
-    setDataCatalog(filterCar);
+    setFilterCatalog(filterCar);
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
     console.log(filterCar);
   };
@@ -72,6 +74,8 @@ const CatalogPage = () => {
     setInputPrice('');
     setMileageFrom('');
     setMileageTo('');
+    setFilterCatalog(dataCatalog);
+    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
   return (
@@ -87,7 +91,7 @@ const CatalogPage = () => {
           mileageFrom={mileageFrom}
           mileageTo={mileageTo}
         />
-        <CatalogList data={dataCatalog} />
+        <CatalogList data={filterCatalog} />
       </Section>
     </>
   );
