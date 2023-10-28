@@ -5,6 +5,7 @@ import { CatalogList } from 'components/CatalogList/CatalogList';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { FilterCar } from 'components/FilterCar/FilterCar';
 import { Message } from 'components/Message/Message';
+import { clearSelect } from 'helpers/clearSelect';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
@@ -87,13 +88,6 @@ const CatalogPage = () => {
     clearSelect();
     setFilterCatalog(dataCatalog);
   };
-
-  function clearSelect() {
-    let selectInputBrand = document.getElementById('inputBrandText');
-    let selectInputPrice = document.getElementById('inputPriceTo');
-    selectInputBrand.innerHTML += '';
-    selectInputPrice.innerHTML += '';
-  }
 
   return (
     <>

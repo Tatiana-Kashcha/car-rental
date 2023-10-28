@@ -6,6 +6,7 @@ import { Message } from 'components/Message/Message';
 import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { useFavorites } from 'hooks/useFavorites';
 import { FilterCar } from 'components/FilterCar/FilterCar';
+import { clearSelect } from 'helpers/clearSelect';
 
 const FavoritesPage = () => {
   const [favorites] = useFavorites();
@@ -85,13 +86,6 @@ const FavoritesPage = () => {
     clearSelect();
     setFilterCatalog(dataFavoriteCar);
   };
-
-  function clearSelect() {
-    let selectInputBrand = document.getElementById('inputBrandText');
-    let selectInputPrice = document.getElementById('inputPriceTo');
-    selectInputBrand.innerHTML += '';
-    selectInputPrice.innerHTML += '';
-  }
 
   return (
     <>
