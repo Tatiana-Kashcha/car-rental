@@ -40,7 +40,7 @@ const FavoritesPage = () => {
     catalogFavoriteCars();
   }, [favorites]);
 
-  const handleCange = evt => {
+  const handleChange = evt => {
     const { name, value } = evt.target;
 
     switch (name) {
@@ -84,7 +84,6 @@ const FavoritesPage = () => {
     setMileageTo('');
     clearSelect();
     setFilterCatalog(dataFavoriteCar);
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
   function clearSelect() {
@@ -106,7 +105,7 @@ const FavoritesPage = () => {
             <FilterCar
               data={dataFavoriteCar}
               handleSubmit={handleSubmit}
-              handleCange={handleCange}
+              handleChange={handleChange}
               resetFilters={resetFilters}
               mileageFrom={mileageFrom}
               mileageTo={mileageTo}

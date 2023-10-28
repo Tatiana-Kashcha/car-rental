@@ -33,7 +33,7 @@ const CatalogPage = () => {
     catalogCars();
   }, []);
 
-  const handleCange = evt => {
+  const handleChange = evt => {
     const { name, value } = evt.target;
 
     switch (name) {
@@ -70,7 +70,6 @@ const CatalogPage = () => {
     // const filterCar = filterrentalPriceCar.filter(
     //   ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
     // );
-
     const filterCar = dataCatalog
       .filter(({ make }) => make.includes(inputBrand))
       .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
@@ -87,7 +86,6 @@ const CatalogPage = () => {
     setMileageTo('');
     clearSelect();
     setFilterCatalog(dataCatalog);
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
   function clearSelect() {
@@ -105,7 +103,7 @@ const CatalogPage = () => {
         <FilterCar
           data={dataCatalog}
           handleSubmit={handleSubmit}
-          handleCange={handleCange}
+          handleChange={handleChange}
           resetFilters={resetFilters}
           mileageFrom={mileageFrom}
           mileageTo={mileageTo}

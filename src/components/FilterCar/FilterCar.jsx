@@ -3,7 +3,7 @@ import * as s from './FilterCar.styled';
 export const FilterCar = ({
   data,
   handleSubmit,
-  handleCange,
+  handleChange,
   resetFilters,
   mileageFrom,
   mileageTo,
@@ -21,7 +21,7 @@ export const FilterCar = ({
           type="select"
           name="inputBrand"
           id="inputBrandText"
-          onChange={handleCange}
+          onChange={handleChange}
         >
           <option value="">Enter the text</option>
           {uniqueMakes.sort().map(make => (
@@ -37,7 +37,7 @@ export const FilterCar = ({
           type="select"
           name="inputPrice"
           id="inputPriceTo"
-          onChange={handleCange}
+          onChange={handleChange}
         >
           <option value="">To $</option>
           {uniquePrice.sort().map(rentalPrice => (
@@ -57,7 +57,7 @@ export const FilterCar = ({
               id="carMileageFrom"
               placeholder="From"
               value={mileageFrom}
-              onChange={handleCange}
+              onChange={handleChange}
             />
           </label>
           <label htmlFor="carMileageTo">
@@ -67,7 +67,7 @@ export const FilterCar = ({
               id="carMileageTo"
               placeholder="To"
               value={mileageTo}
-              onChange={handleCange}
+              onChange={handleChange}
             />
           </label>
         </s.LabelBoxMileage>
