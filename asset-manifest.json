@@ -1,10 +1,10 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.ece9f197.css",
-    "main.js": "/car-rental/static/js/main.4cc878c2.js",
+    "main.js": "/car-rental/static/js/main.5674205a.js",
     "static/js/983.1a0e60e1.chunk.js": "/car-rental/static/js/983.1a0e60e1.chunk.js",
-    "static/js/69.bff91c79.chunk.js": "/car-rental/static/js/69.bff91c79.chunk.js",
-    "static/js/697.2906a2c3.chunk.js": "/car-rental/static/js/697.2906a2c3.chunk.js",
+    "static/js/69.cb5512c8.chunk.js": "/car-rental/static/js/69.cb5512c8.chunk.js",
+    "static/js/697.e98414ea.chunk.js": "/car-rental/static/js/697.e98414ea.chunk.js",
     "static/js/438.fb003aa8.chunk.js": "/car-rental/static/js/438.fb003aa8.chunk.js",
     "static/js/148.828c1575.chunk.js": "/car-rental/static/js/148.828c1575.chunk.js",
     "static/media/hero-car.png": "/car-rental/static/media/hero-car.8430ea1a9f851067da5e.png",
@@ -23,15 +23,15 @@
     "static/media/burger-menu.svg": "/car-rental/static/media/burger-menu.cd8139fdb902f54f6c943bb1141b4141.svg",
     "static/media/x-close.svg": "/car-rental/static/media/x-close.b8c2a2a37d22c5916eba425ea5b71782.svg",
     "main.ece9f197.css.map": "/car-rental/static/css/main.ece9f197.css.map",
-    "main.4cc878c2.js.map": "/car-rental/static/js/main.4cc878c2.js.map",
+    "main.5674205a.js.map": "/car-rental/static/js/main.5674205a.js.map",
     "983.1a0e60e1.chunk.js.map": "/car-rental/static/js/983.1a0e60e1.chunk.js.map",
-    "69.bff91c79.chunk.js.map": "/car-rental/static/js/69.bff91c79.chunk.js.map",
-    "697.2906a2c3.chunk.js.map": "/car-rental/static/js/697.2906a2c3.chunk.js.map",
+    "69.cb5512c8.chunk.js.map": "/car-rental/static/js/69.cb5512c8.chunk.js.map",
+    "697.e98414ea.chunk.js.map": "/car-rental/static/js/697.e98414ea.chunk.js.map",
     "438.fb003aa8.chunk.js.map": "/car-rental/static/js/438.fb003aa8.chunk.js.map",
     "148.828c1575.chunk.js.map": "/car-rental/static/js/148.828c1575.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ece9f197.css",
-    "static/js/main.4cc878c2.js"
+    "static/js/main.5674205a.js"
   ]
 }
