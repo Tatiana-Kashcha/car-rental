@@ -66,16 +66,24 @@ const FavoritesPage = () => {
     }
   };
 
+  const filterMakeCar = dataFavoriteCar.filter(({ make }) =>
+    make.includes(inputBrand)
+  );
+
+  const filterPriceCar = filterMakeCar.filter(
+    ({ rentalPrice }) => rentalPrice === inputPrice
+  );
+
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    const filterCar = dataFavoriteCar
-      .filter(({ make }) => make.includes(inputBrand))
-      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
+    if (!inputPrice) {
+      setFilterCatalog(filterMakeCar);
+      return;
+    }
 
-    setFilterCatalog(filterCar);
+    setFilterCatalog(filterPriceCar);
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-    console.log(filterCar);
   };
 
   const resetFilters = () => {

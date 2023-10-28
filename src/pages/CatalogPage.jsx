@@ -16,11 +16,6 @@ const CatalogPage = () => {
   const [mileageTo, setMileageTo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  // const [resultFilterMakeCar, setResultFilterMakeCar] = useState([]);
-  // const [resultFilterRentalPriceCar, setResultFilterRentalPriceCar] = useState(
-  //   []
-  // );
-
   useEffect(() => {
     setIsLoading(true);
 
@@ -64,31 +59,27 @@ const CatalogPage = () => {
     }
   };
 
+  const filterMakeCar = dataCatalog.filter(({ make }) =>
+    make.includes(inputBrand)
+  );
+
+  const filterPriceCar = filterMakeCar.filter(
+    ({ rentalPrice }) => rentalPrice === inputPrice
+  );
+
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    // const filterMakeCar = dataCatalog.filter(({ make }) =>
-    //   make.includes(inputBrand)
-    // );
-    // setResultFilterMakeCar(filterMakeCar);
-    // console.log(resultFilterMakeCar);
-
-    // const filterrentalPriceCar = resultFilterMakeCar.filter(
-    //   ({ rentalPrice }) => rentalPrice === inputPrice
-    // );
-    // setResultFilterRentalPriceCar(filterrentalPriceCar);
-
-    // const filterCar = resultFilterRentalPriceCar.filter(
+    if (!inputPrice) {
+      setFilterCatalog(filterMakeCar);
+      return;
+    }
+    // const filterCar = filterRentalPriceCar.filter(
     //   ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
     // );
 
-    const filterCar = dataCatalog
-      .filter(({ make }) => make.includes(inputBrand))
-      .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
-
-    setFilterCatalog(filterCar);
+    setFilterCatalog(filterPriceCar);
     console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
-    console.log(filterCar);
   };
 
   const resetFilters = () => {
