@@ -16,6 +16,11 @@ const CatalogPage = () => {
   const [mileageTo, setMileageTo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  // const [resultFilterMakeCar, setResultFilterMakeCar] = useState([]);
+  // const [resultFilterRentalPriceCar, setResultFilterRentalPriceCar] = useState(
+  //   []
+  // );
+
   useEffect(() => {
     setIsLoading(true);
 
@@ -65,12 +70,18 @@ const CatalogPage = () => {
     // const filterMakeCar = dataCatalog.filter(({ make }) =>
     //   make.includes(inputBrand)
     // );
-    // const filterrentalPriceCar = filterMakeCar.filter(
+    // setResultFilterMakeCar(filterMakeCar);
+    // console.log(resultFilterMakeCar);
+
+    // const filterrentalPriceCar = resultFilterMakeCar.filter(
     //   ({ rentalPrice }) => rentalPrice === inputPrice
     // );
-    // const filterCar = filterrentalPriceCar.filter(
+    // setResultFilterRentalPriceCar(filterrentalPriceCar);
+
+    // const filterCar = resultFilterRentalPriceCar.filter(
     //   ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
     // );
+
     const filterCar = dataCatalog
       .filter(({ make }) => make.includes(inputBrand))
       .filter(({ rentalPrice }) => rentalPrice.includes(inputPrice));
