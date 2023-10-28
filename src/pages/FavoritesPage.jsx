@@ -101,7 +101,6 @@ const FavoritesPage = () => {
     }
 
     setFilterCatalog(filterMileageCar);
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
   };
 
   const resetFilters = () => {
