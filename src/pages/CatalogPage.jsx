@@ -67,19 +67,33 @@ const CatalogPage = () => {
     ({ rentalPrice }) => rentalPrice === inputPrice
   );
 
+  const filterMileageCar = filterPriceCar.filter(
+    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
+  );
+
+  const filterMileageCarNoPrice = filterMakeCar.filter(
+    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
+  );
+
   const handleSubmit = evt => {
     evt.preventDefault();
 
-    if (!inputPrice) {
+    if (!inputPrice & (!mileageFrom || !mileageTo)) {
       setFilterCatalog(filterMakeCar);
       return;
     }
-    // const filterCar = filterRentalPriceCar.filter(
-    //   ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
-    // );
 
-    setFilterCatalog(filterPriceCar);
-    console.log({ inputBrand, inputPrice, mileageFrom, mileageTo });
+    if (!inputPrice) {
+      setFilterCatalog(filterMileageCarNoPrice);
+      return;
+    }
+
+    if (!mileageFrom || !mileageTo) {
+      setFilterCatalog(filterPriceCar);
+      return;
+    }
+
+    setFilterCatalog(filterMileageCar);
   };
 
   const resetFilters = () => {
