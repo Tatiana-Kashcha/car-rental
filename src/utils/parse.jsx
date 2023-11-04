@@ -18,6 +18,8 @@ export const getLocationData = (address, car) => {
 
 export const parseConditions = rentalConditions => {
   const arr = rentalConditions.split('\n');
-  const age = arr[arr.length - 1];
+  const ageString = arr.find(item => item.includes('Minimum age'));
+  const ageValue = parseInt(ageString.split(':')[1]);
+  const age = `${ageValue}`;
   return { arr, age };
 };
