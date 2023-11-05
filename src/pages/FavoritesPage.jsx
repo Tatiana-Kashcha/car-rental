@@ -7,6 +7,11 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { useFavorites } from 'hooks/useFavorites';
 import { FilterCar } from 'components/FilterCar/FilterCar';
 import { clearSelect } from 'helpers/clearSelect';
+import {
+  getCarsByMake,
+  getCarsByPrice,
+  getCarsByMileage,
+} from 'helpers/getCars';
 
 const FavoritesPage = () => {
   const [favorites] = useFavorites();
@@ -66,20 +71,20 @@ const FavoritesPage = () => {
     }
   };
 
-  const filterMakeCar = dataFavoriteCar.filter(({ make }) =>
-    make.includes(inputBrand)
+  const filterMakeCar = getCarsByMake(dataFavoriteCar, inputBrand);
+
+  const filterPriceCar = getCarsByPrice(filterMakeCar, inputPrice);
+
+  const filterMileageCar = getCarsByMileage(
+    filterPriceCar,
+    mileageFrom,
+    mileageTo
   );
 
-  const filterPriceCar = filterMakeCar.filter(
-    ({ rentalPrice }) => rentalPrice === inputPrice
-  );
-
-  const filterMileageCar = filterPriceCar.filter(
-    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
-  );
-
-  const filterMileageCarNoPrice = filterMakeCar.filter(
-    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
+  const filterMileageCarNoPrice = getCarsByMileage(
+    filterMakeCar,
+    mileageFrom,
+    mileageTo
   );
 
   const handleSubmit = evt => {

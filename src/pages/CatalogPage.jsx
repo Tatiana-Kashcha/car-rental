@@ -6,6 +6,11 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 import { FilterCar } from 'components/FilterCar/FilterCar';
 import { Message } from 'components/Message/Message';
 import { clearSelect } from 'helpers/clearSelect';
+import {
+  getCarsByMake,
+  getCarsByPrice,
+  getCarsByMileage,
+} from 'helpers/getCars';
 
 const CatalogPage = () => {
   const [dataCatalog, setDataCatalog] = useState([]);
@@ -59,20 +64,20 @@ const CatalogPage = () => {
     }
   };
 
-  const filterMakeCar = dataCatalog.filter(({ make }) =>
-    make.includes(inputBrand)
+  const filterMakeCar = getCarsByMake(dataCatalog, inputBrand);
+
+  const filterPriceCar = getCarsByPrice(filterMakeCar, inputPrice);
+
+  const filterMileageCar = getCarsByMileage(
+    filterPriceCar,
+    mileageFrom,
+    mileageTo
   );
 
-  const filterPriceCar = filterMakeCar.filter(
-    ({ rentalPrice }) => rentalPrice === inputPrice
-  );
-
-  const filterMileageCar = filterPriceCar.filter(
-    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
-  );
-
-  const filterMileageCarNoPrice = filterMakeCar.filter(
-    ({ mileage }) => (mileage > mileageFrom) & (mileage < mileageTo)
+  const filterMileageCarNoPrice = getCarsByMileage(
+    filterMakeCar,
+    mileageFrom,
+    mileageTo
   );
 
   const handleSubmit = evt => {
