@@ -25,7 +25,9 @@ export const FilterCar = ({
         >
           <option value="">Enter the text</option>
           {uniqueMakes.sort().map(make => (
-            <s.DropdownList value={`${make}`}>{make}</s.DropdownList>
+            <s.DropdownList key={`${make}`} value={`${make}`}>
+              {make}
+            </s.DropdownList>
           ))}
         </s.Select>
       </s.LabelBoxMake>
@@ -41,7 +43,7 @@ export const FilterCar = ({
         >
           <option value="">To $</option>
           {uniquePrice.sort().map(rentalPrice => (
-            <s.DropdownList value={`${rentalPrice}`}>
+            <s.DropdownList key={`${rentalPrice}`} value={`${rentalPrice}`}>
               {rentalPrice}
             </s.DropdownList>
           ))}
