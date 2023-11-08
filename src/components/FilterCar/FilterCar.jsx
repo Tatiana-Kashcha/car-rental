@@ -7,6 +7,8 @@ export const FilterCar = ({
   resetFilters,
   mileageFrom,
   mileageTo,
+  selectInputBrandRef,
+  selectInputPriceRef,
 }) => {
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
@@ -21,6 +23,7 @@ export const FilterCar = ({
           type="select"
           name="inputBrand"
           id="inputBrandText"
+          ref={selectInputBrandRef}
           onChange={handleChange}
         >
           <option value="">Enter the text</option>
@@ -39,6 +42,7 @@ export const FilterCar = ({
           type="select"
           name="inputPrice"
           id="inputPriceTo"
+          ref={selectInputPriceRef}
           onChange={handleChange}
         >
           <option value="">To $</option>
