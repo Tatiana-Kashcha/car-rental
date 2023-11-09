@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.ece9f197.css",
-    "main.js": "/car-rental/static/js/main.06676724.js",
+    "main.js": "/car-rental/static/js/main.d47b37d5.js",
     "static/js/983.1a0e60e1.chunk.js": "/car-rental/static/js/983.1a0e60e1.chunk.js",
     "static/js/69.90c8817f.chunk.js": "/car-rental/static/js/69.90c8817f.chunk.js",
     "static/js/697.8c776ea0.chunk.js": "/car-rental/static/js/697.8c776ea0.chunk.js",
     "static/js/438.fb003aa8.chunk.js": "/car-rental/static/js/438.fb003aa8.chunk.js",
-    "static/js/132.bd5f4be6.chunk.js": "/car-rental/static/js/132.bd5f4be6.chunk.js",
+    "static/js/132.605d2cd9.chunk.js": "/car-rental/static/js/132.605d2cd9.chunk.js",
     "static/media/hero-car.png": "/car-rental/static/media/hero-car.8430ea1a9f851067da5e.png",
     "static/media/go-car.png": "/car-rental/static/media/go-car.c8df690d33bc69925a39.png",
     "static/media/Montserrat-Regular.ttf": "/car-rental/static/media/Montserrat-Regular.2a2d37bf7680d86811db.ttf",
@@ -23,15 +23,15 @@
     "static/media/burger-menu.svg": "/car-rental/static/media/burger-menu.cd8139fdb902f54f6c943bb1141b4141.svg",
     "static/media/x-close.svg": "/car-rental/static/media/x-close.b8c2a2a37d22c5916eba425ea5b71782.svg",
     "main.ece9f197.css.map": "/car-rental/static/css/main.ece9f197.css.map",
-    "main.06676724.js.map": "/car-rental/static/js/main.06676724.js.map",
+    "main.d47b37d5.js.map": "/car-rental/static/js/main.d47b37d5.js.map",
     "983.1a0e60e1.chunk.js.map": "/car-rental/static/js/983.1a0e60e1.chunk.js.map",
     "69.90c8817f.chunk.js.map": "/car-rental/static/js/69.90c8817f.chunk.js.map",
     "697.8c776ea0.chunk.js.map": "/car-rental/static/js/697.8c776ea0.chunk.js.map",
     "438.fb003aa8.chunk.js.map": "/car-rental/static/js/438.fb003aa8.chunk.js.map",
-    "132.bd5f4be6.chunk.js.map": "/car-rental/static/js/132.bd5f4be6.chunk.js.map"
+    "132.605d2cd9.chunk.js.map": "/car-rental/static/js/132.605d2cd9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ece9f197.css",
-    "static/js/main.06676724.js"
+    "static/js/main.d47b37d5.js"
   ]
 }
