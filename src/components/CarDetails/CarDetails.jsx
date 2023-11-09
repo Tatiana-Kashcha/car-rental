@@ -61,7 +61,8 @@ export const CarDetails = ({
       <s.Conditions>
         <s.Box>{parseConditions(rentalConditions).arr[2]}</s.Box>
         <s.Box>
-          Mileage: <s.Accent>{(mileage / 1000).toFixed(3)}</s.Accent>
+          Mileage:{' '}
+          <s.Accent>{(mileage / 1000).toFixed(3).replace('.', ',')}</s.Accent>
         </s.Box>
         <s.Box>
           Price: <s.Accent>{rentalPrice}</s.Accent>

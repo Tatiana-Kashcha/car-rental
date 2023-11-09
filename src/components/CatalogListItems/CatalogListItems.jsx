@@ -41,7 +41,8 @@ export const CatalogListItems = ({ car }) => {
       </s.Title>
       <s.Info>
         {parseAddress(car.address).city} | {parseAddress(car.address).country} |{' '}
-        {car.rentalCompany} | {car.type} | {car.mileage / 1000} |{' '}
+        {car.rentalCompany} | {car.type} |{' '}
+        {(car.mileage / 1000).toFixed(3).replace('.', ',')} |{' '}
         {car.accessories[2]}
       </s.Info>
       <s.ButtonLearnMore onClick={showModal}>Learn more</s.ButtonLearnMore>
