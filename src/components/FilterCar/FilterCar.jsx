@@ -13,6 +13,7 @@ export const FilterCar = ({
   const uniqueMakes = [...new Set(data.map(car => car.make))];
   const uniquePrice = [...new Set(data.map(car => car.rentalPrice))];
 
+  console.log(uniqueMakes);
   return (
     <s.Form onSubmit={handleSubmit}>
       <s.LabelBoxMake>
